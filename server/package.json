@@ -12,8 +12,8 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.ts": [
-      "eslint --fix",
+    "src/**/*.ts": [
+      "eslint .",
       "prettier --write ."
     ]
   },
