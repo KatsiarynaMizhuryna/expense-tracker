@@ -38,6 +38,7 @@ app.post('/expenses', async (req: Request, res: Response) => {
       expense
     });
   } catch (error) {
+    console.error('Error fetching expense:', error);
     res.status(500).json({ message: 'Error creating expense record.' });
   }
 });
@@ -78,7 +79,13 @@ app.put('/expenses/:id', async (req: Request, res: Response) => {
   try {
     const updatedExpense = await prisma.expense.update({
       where: { id: parseInt(id) },
-      data: { name, amount, currency, category, date }
+      data: {
+        name,
+        amount,
+        currency,
+        category,
+        date
+      }
     });
 
     res.status(200).json({
@@ -86,7 +93,7 @@ app.put('/expenses/:id', async (req: Request, res: Response) => {
       expense: updatedExpense
     });
   } catch (error) {
-    console.error(error);
+    console.error('Error fetching expense:', error);
     res.status(404).json({ message: 'Expense record not found.' });
   }
 });
@@ -104,7 +111,7 @@ app.delete('/expenses/:id', async (req: Request, res: Response) => {
       expense: deletedExpense
     });
   } catch (error) {
-    console.error(error);
+    console.error('Error fetching expense:', error);
     res.status(404).json({ message: 'Expense record not found.' });
   }
 });
