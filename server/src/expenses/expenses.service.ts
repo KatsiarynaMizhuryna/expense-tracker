@@ -4,7 +4,12 @@ import { CreateExpenseDto } from './dto/create-expense.dto';
 export const createExpense = (data: CreateExpenseDto) =>
   repository.createExpense(data);
 
-export const getAllExpenses = () => repository.getAllExpenses();
+export const getAllExpenses = (
+  pagination: { limit?: number; offset?: number },
+  filters: { fromDate?: Date; toDate?: Date }
+) => {
+  return repository.getAllExpenses(pagination, filters);
+};
 
 export const getExpenseById = (id: number) => repository.getExpenseById(id);
 

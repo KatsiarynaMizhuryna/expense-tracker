@@ -35,7 +35,18 @@ router.post(
 
 router.get('/', async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const expenses = await service.getAllExpenses();
+    const { limit, offset, fromDate, toDate } = req.query;
+    const pagination = {
+      limit: limit ? parseInt(limit as string, 10) : undefined,
+      offset: offset ? parseInt(offset as string, 10) : undefined
+    };
+
+    const filters = {
+      fromDate: fromDate ? new Date(fromDate as string) : undefined,
+      toDate: toDate ? new Date(toDate as string) : undefined
+    };
+
+    const expenses = await service.getAllExpenses(pagination, filters);
     res.status(200).json(expenses);
   } catch (error) {
     next(error);
@@ -57,7 +68,7 @@ router.get('/:id', async (req: Request, res: Response, next: NextFunction) => {
   }
 });
 
-router.put(
+router.patch(
   '/:id',
   createExpenseSchema,
   async (req: Request, res: Response, next: NextFunction): Promise<void> => {
