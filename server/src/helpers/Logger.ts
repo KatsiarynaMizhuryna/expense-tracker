@@ -14,15 +14,22 @@ const logger = createLogger({
     errors({ stack: true }),
     logFormat
   ),
-  transports: [
+  transports: []
+});
+
+if (process.env.NODE_ENV === 'development') {
+  logger.add(
     new transports.Console({
       format: combine(colorize(), logFormat)
-    }),
+    })
+  );
+} else if (process.env.NODE_ENV === 'production') {
+  logger.add(
     new transports.File({
       filename: path.join(__dirname, '../logs/app.log'),
       level: 'info'
     })
-  ]
-});
+  );
+}
 
 export default logger;
