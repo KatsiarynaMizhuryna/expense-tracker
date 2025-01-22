@@ -22,12 +22,13 @@ const router = express.Router();
 router.post(
   '/',
   createExpenseSchema,
-  async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+  async (req: Request, res: Response, next: NextFunction) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       logger.warn(ERROR_INVALID_INPUT, { errors: errors.array() });
-      res.status(HTTPCode.BAD_REQUEST).json({ message: ERROR_INVALID_INPUT });
-      return;
+      return res
+        .status(HTTPCode.BAD_REQUEST)
+        .json({ message: ERROR_INVALID_INPUT });
     }
 
     try {
@@ -58,7 +59,7 @@ router.get('/', async (req: Request, res: Response, next: NextFunction) => {
     };
 
     const expenses = await service.getAllExpenses(pagination, filters);
-    res.status(HTTPCode.OK).json(expenses);
+    return res.status(HTTPCode.OK).json(expenses);
   } catch (error) {
     logger.error(ERROR_FETCH_EXPENSE, { error });
     next(error);
@@ -72,9 +73,9 @@ router.get('/:id', async (req: Request, res: Response, next: NextFunction) => {
 
     if (!expense) {
       logger.error(ERROR_NOT_FOUND);
-      res.status(HTTPCode.NOT_FOUND).json({ message: ERROR_NOT_FOUND });
+      return res.status(HTTPCode.NOT_FOUND).json({ message: ERROR_NOT_FOUND });
     } else {
-      res.status(HTTPCode.OK).json(expense);
+      return res.status(HTTPCode.OK).json(expense);
     }
   } catch (error) {
     logger.error(ERROR_FETCH_EXPENSE, { error });
@@ -85,12 +86,13 @@ router.get('/:id', async (req: Request, res: Response, next: NextFunction) => {
 router.patch(
   '/:id',
   createExpenseSchema,
-  async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+  async (req: Request, res: Response, next: NextFunction) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       logger.warn(ERROR_INVALID_INPUT, { errors: errors.array() });
-      res.status(HTTPCode.BAD_REQUEST).json({ message: ERROR_INVALID_INPUT });
-      return;
+      return res
+        .status(HTTPCode.BAD_REQUEST)
+        .json({ message: ERROR_INVALID_INPUT });
     }
 
     try {
@@ -99,7 +101,7 @@ router.patch(
       const updatedExpense = await service.updateExpense(id, data);
       logger.info(SUCCESS_UPDATE_EXPENSE, { updatedExpense });
 
-      res.status(HTTPCode.OK).json({
+      return res.status(HTTPCode.OK).json({
         message: SUCCESS_UPDATE_EXPENSE,
         expense: updatedExpense
       });
@@ -119,11 +121,12 @@ router.delete(
 
       if (!deletedExpense) {
         logger.warn(ERROR_NOT_FOUND, { id });
-        res.status(HTTPCode.NOT_FOUND).json({ message: ERROR_NOT_FOUND });
-        return;
+        return res
+          .status(HTTPCode.NOT_FOUND)
+          .json({ message: ERROR_NOT_FOUND });
       }
       logger.info(SUCCESS_DELETE_EXPENSE);
-      res.status(HTTPCode.OK).json({ message: SUCCESS_DELETE_EXPENSE });
+      return res.status(HTTPCode.OK).json({ message: SUCCESS_DELETE_EXPENSE });
     } catch (error) {
       logger.error(ERROR_DELETE_EXPENSE, { error });
       next(error);
