@@ -35,7 +35,7 @@ router.post(
       const data: CreateExpenseDto = req.body;
       const expense = await service.createExpense(data);
       logger.info(SUCCESS_CREATE_EXPENSE, { expense });
-      res
+      return res
         .status(HTTPCode.CREATED)
         .json({ message: SUCCESS_CREATE_EXPENSE, expense });
     } catch (error) {
