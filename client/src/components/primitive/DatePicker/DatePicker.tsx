@@ -33,14 +33,6 @@ const DatePickerField: React.FC<DatePickerFieldProps> = ({
   selectedDate,
   onChange
 }) => {
-  const handleSetDate = () => {
-    onChange(new Date());
-  };
-
-  const handleClearDate = () => {
-    onChange(null);
-  };
-
   return (
     <label>
       <DatePicker
