@@ -33,18 +33,42 @@ const DatePickerField: React.FC<DatePickerFieldProps> = ({
   selectedDate,
   onChange
 }) => {
+  const handleSetDate = () => {
+    onChange(new Date());
+  };
+
+  const handleClearDate = () => {
+    onChange(null);
+  };
+
   return (
     <label>
       <DatePicker
         selected={selectedDate}
         onChange={onChange}
-        calendarClassName={styles['custom-datepicker']}
         customInput={
           <CustomInput
             value={selectedDate ? selectedDate.toDateString() : ''}
           />
         }
-      />
+      >
+        <div className={styles.buttons_container}>
+          <button
+            className={styles.selected_date_button}
+            onClick={handleClearDate}
+            type="button"
+          >
+            {selectedDate ? selectedDate.toLocaleDateString() : ''}
+          </button>
+          <button
+            className={styles.set_button}
+            onClick={handleSetDate}
+            type="button"
+          >
+            Set Date
+          </button>
+        </div>
+      </DatePicker>
     </label>
   );
 };

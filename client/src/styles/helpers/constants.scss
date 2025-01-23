@@ -14,6 +14,7 @@ $neutral-5: #e0e0e0;
 $neutral-6: #ffffff;
 $neutral-7: #cbcbcb;
 $neutral-8: #6b6f7b;
+$neutral-9: #3f3f46;
 
 $semantic-error: #ff4267;
 $semantic-info: #0890fe;
@@ -44,3 +45,9 @@ $caption-2-weight: medium;
 
 $drop-shadow-card: 0px 4px 30px rgba(54, 41, 183, 0.07);
 $drop-shadow-card-small: 0px -5px 30px rgba(54, 41, 183, 0.07);
+$gradient-background: linear-gradient(0deg, #ffffff, #ffffff),
+  linear-gradient(
+    180deg,
+    rgba(223, 225, 231, 0) 0%,
+    rgba(223, 225, 231, 0.05) 100%
+  );
