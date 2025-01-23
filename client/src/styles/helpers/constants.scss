@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 $primary-1: #3629b7;
 $primary-2: #5655b9;
 $primary-3: #a8a3d7;
@@ -5,16 +8,20 @@ $primary-4: #f2f1f9;
 
 $neutral-1: #343434;
 $neutral-2: #989898;
-$neutral-3: #cacaca;
-$neutral-4: #e0e0e0;
-$neutral-5: #ffffff;
+$neutral-3: #979797;
+$neutral-4: #cacaca;
+$neutral-5: #e0e0e0;
+$neutral-6: #ffffff;
+$neutral-7: #cbcbcb;
+$neutral-8: #6b6f7b;
 
 $semantic-error: #ff4267;
 $semantic-info: #0890fe;
 $semantic-warning: #ffaf2a;
 $semantic-success: #52d5ba;
 
-$font-family: 'Poppins', sans-serif;
+$font-family-1: 'Poppins', sans-serif;
+$font-family-2: 'Inter', sans-serif;
 
 $title-1: 24px;
 $title-2: 20px;

@@ -1,0 +1,82 @@
+@import '../../../styles/helpers/constants.scss';
+.container {
+  padding: 20px 30px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  width: 1400px;
+  margin: 20px auto;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.tableHead {
+  font-weight: bold;
+  color: $neutral-8;
+  border-bottom: 2px solid #ddd;
+  font-family: $font-family-2;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21.78px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.tableRow {
+  &:hover {
+    background-color: #f8f8f8;
+  }
+}
+
+.checkbox {
+  flex: 0 0 40px;
+  text-align: center;
+}
+
+.name {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 97px;
+  margin-right: 629px;
+}
+
+.category {
+  flex: 1;
+}
+
+.date {
+  flex: 1;
+  margin-left: 168px;
+  margin-right: 145px;
+}
+
+.total {
+  flex: 1;
+  color: red;
+  font-weight: bold;
+}
+
+.actions {
+  flex: 0 0 40px;
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+  color: #888;
+}
+.icon {
+  font-size: 18px;
+}

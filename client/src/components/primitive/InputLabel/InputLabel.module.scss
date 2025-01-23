@@ -1,0 +1,12 @@
+@import '../../../styles/helpers/constants.scss';
+
+.input_label {
+  font-family: $font-family;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  background-color: $neutral-3;
+}

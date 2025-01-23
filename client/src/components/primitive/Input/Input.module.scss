@@ -1,0 +1,12 @@
+@import '../../../styles/helpers/constants.scss';
+
+.input {
+  width: 327px;
+  height: 44px;
+  border: 1px solid transparent;
+  border-radius: 15px 0px 0px 0px;
+}
+
+input::placeholder {
+  color: $neutral-7;
+}
