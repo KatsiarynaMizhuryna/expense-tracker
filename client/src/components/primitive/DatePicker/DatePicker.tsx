@@ -16,15 +16,15 @@ interface CustomInputProps {
 
 export const CustomInput: React.FC<CustomInputProps> = ({ value, onClick }) => {
   return (
-    <div className={styles['custom-input-wrapper']}>
+    <div className={styles.custom_input_wrapper}>
       <input
         type="text"
         value={value}
         onClick={onClick}
         readOnly
-        className={styles['custom-input']}
+        className={styles.custom_input}
       />
-      <img src={calendar} alt="calendar" className={styles['calendar-icon']} />
+      <img src={calendar} alt="calendar" className={styles.calendar_icon} />
     </div>
   );
 };
@@ -52,24 +52,6 @@ const DatePickerField: React.FC<DatePickerFieldProps> = ({
             value={selectedDate ? selectedDate.toDateString() : ''}
           />
         }
-        renderCustomHeader={() => (
-          <div className={styles['datepicker-buttons']}>
-            <button
-              className={styles['clear-button']}
-              onClick={handleClearDate}
-              type="button"
-            >
-              {selectedDate ? selectedDate.toLocaleDateString() : 'Set Date'}
-            </button>
-            <button
-              className={styles['set-button']}
-              onClick={handleSetDate}
-              type="button"
-            >
-              Set Date
-            </button>
-          </div>
-        )}
       />
     </label>
   );

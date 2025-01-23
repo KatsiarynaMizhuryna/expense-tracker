@@ -1,10 +1,10 @@
-.custom-input-wrapper {
+.custom_input_wrapper {
   position: relative;
   display: inline-block;
   width: 100%;
 }
 
-.custom-input {
+.custom_input {
   border-radius: 15px;
   border: 1px solid #ccc;
   padding: 8px 36px 8px 12px;
@@ -12,7 +12,7 @@
   box-sizing: border-box;
   cursor: pointer;
 }
-.calendar-icon {
+.calendar_icon {
   position: absolute;
   top: 50%;
   right: 12px;
