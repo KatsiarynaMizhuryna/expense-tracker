@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Menu.module.scss';
+import MenuItem from '../MenuItem/MenuItem';
 
 interface MenuProps {
   onEdit: () => void;
@@ -9,13 +10,9 @@ interface MenuProps {
 const Menu: React.FC<MenuProps> = ({ onEdit, onDelete }) => {
   return (
     <div className={styles.dropdownMenu}>
-      <button className={styles.dropdownItem} onClick={onEdit}>
-        Edit
-      </button>
+      <MenuItem label="Edit" onClick={onEdit} />
       <hr className={styles.divider} />
-      <button className={styles.dropdownItem} onClick={onDelete}>
-        Delete
-      </button>
+      <MenuItem label="Delete" onClick={onDelete} />
     </div>
   );
 };

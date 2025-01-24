@@ -1,29 +1,25 @@
 import React from 'react';
 import styles from './Button.module.scss';
 
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
-  onClick?: () => void;
   active?: boolean;
-  disabled?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
   label,
-  onClick,
   active = false,
-  disabled = false
+  disabled = false,
+  className = '',
+  ...props
 }) => {
   const classNames = `${styles.button} 
                       ${active ? styles.active : ''} 
-                      ${disabled ? styles.disabled : ''}`;
+                      ${disabled ? styles.disabled : ''} 
+                      ${className}`.trim();
 
   return (
-    <button
-      className={classNames}
-      onClick={disabled ? undefined : onClick}
-      disabled={disabled}
-    >
+    <button className={classNames} disabled={disabled} {...props}>
       {label}
     </button>
   );

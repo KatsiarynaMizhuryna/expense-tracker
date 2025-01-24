@@ -2,7 +2,7 @@ import React from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import styles from './DatePicker.module.scss';
-import calendar from '../../../assets/calendar.svg';
+import calendar from '../../assets/calendar.svg';
 
 interface DatePickerFieldProps {
   selectedDate: Date | null;

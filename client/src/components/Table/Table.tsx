@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Table.module.scss';
-import credit from '../../../assets/Category/credit.svg';
-import hobby from '../../../assets/Category/hobby.svg';
+import credit from '../../assets/Category/credit.svg';
+import hobby from '../../assets/Category/hobby.svg';
 
 const categoryIcons: Record<string, string> = {
   Hobby: hobby,
