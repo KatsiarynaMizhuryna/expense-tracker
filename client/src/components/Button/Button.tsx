@@ -15,7 +15,6 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   const classNames = `${styles.button} 
                       ${active ? styles.active : ''} 
-                      ${disabled ? styles.disabled : ''} 
                       ${className}`.trim();
 
   return (
