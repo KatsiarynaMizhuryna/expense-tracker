@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-import app from './server';
+import app from './app';
 import { prisma } from './db/db.service';
 
 dotenv.config();
@@ -7,6 +7,7 @@ dotenv.config();
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
+  console.log('NODE_ENV:', process.env.NODE_ENV);
   console.log(`Server is running on http://localhost:${port}`);
 });
 
