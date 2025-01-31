@@ -16,36 +16,40 @@ const Table: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.table}>
-        <div className={`${styles.row} ${styles.tableHead}`}>
-          <div className={styles.checkbox}></div>
-          <div className={styles.name}>Name</div>
-          <div className={styles.category}>Category</div>
-          <div className={styles.date}>Date</div>
-          <div>Total</div>
-          <div className={styles.actions}></div>{' '}
-        </div>
-        {rows.map((row, index) => (
-          <div key={index} className={`${styles.row} ${styles.tableRow}`}>
-            <div className={styles.checkbox}>
-              <input type="checkbox" />
-            </div>
-            <div className={styles.name}>
-              <span className={styles.icon}>
-                <img
-                  src={categoryIcons[row.category] || credit}
-                  alt={`${row.category} icon`}
-                />
-              </span>
-              {row.name}
-            </div>
-            <div className={styles.category}>{row.category}</div>
-            <div className={styles.date}>{row.date}</div>
-            <div className={styles.total}>{row.total.toFixed(2)}</div>
-            <div className={styles.actions}>⋮</div>
-          </div>
-        ))}
-      </div>
+      <table className={styles.table}>
+        <thead>
+          <tr>
+            <th className={styles.checkbox}></th>
+            <th className={styles.name}>Name</th>
+            <th className={styles.category}>Category</th>
+            <th className={styles.date}>Date</th>
+            <th>Total</th>
+            <th className={styles.actions}></th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row, index) => (
+            <tr key={index} className={styles.tableRow}>
+              <td className={styles.checkbox}>
+                <input type="checkbox" />
+              </td>
+              <td className={styles.name}>
+                <span className={styles.icon}>
+                  <img
+                    src={categoryIcons[row.category] || credit}
+                    alt={`${row.category} icon`}
+                  />
+                </span>
+                {row.name}
+              </td>
+              <td className={styles.category}>{row.category}</td>
+              <td className={styles.date}>{row.date}</td>
+              <td className={styles.total}>{row.total.toFixed(2)}</td>
+              <td className={styles.actions}>⋮</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

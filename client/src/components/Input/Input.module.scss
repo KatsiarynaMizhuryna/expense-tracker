@@ -1,4 +1,4 @@
-@import '../../styles/helpers/constants.scss';
+@use '../../styles/helpers/constants.scss';
 
 .input {
   width: 327px;
@@ -8,5 +8,5 @@
 }
 
 input::placeholder {
-  color: $neutral-7;
+  color: constants.$neutral-7;
 }

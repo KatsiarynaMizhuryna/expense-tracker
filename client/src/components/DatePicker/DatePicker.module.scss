@@ -1,4 +1,4 @@
-@import '../../styles/helpers/constants.scss';
+@use '../../styles/helpers/constants.scss';
 
 .custom_input_wrapper {
   position: relative;
@@ -29,22 +29,22 @@
   height: 36px;
   padding: 8px 14px 8px 14px;
   gap: 4px;
-  background-color: $primary-1;
+  background-color: constants.$primary-1;
   border-radius: 6px;
   border: 1px 0px 0px 0px;
-  font-family: $font-family-1;
+  font-family: constants.$font-family-1;
   font-size: 14px;
   font-weight: 500;
-  color: $neutral-6;
+  color: constants.$neutral-6;
 }
 
 .selected_date_button {
   width: 127px;
   height: 36px;
   padding: 8px 14px 8px 14px;
-  border: 2px solid $drop-shadow-card;
-  font-family: $font-family-1;
+  border: 2px solid constants.$drop-shadow-card;
+  font-family: constants.$font-family-1;
   font-size: 14px;
   font-weight: 500;
-  color: $neutral-9;
+  color: constants.$neutral-9;
 }

@@ -1,11 +1,11 @@
-@import '../../../styles/helpers/constants.scss';
+@use '../../../styles/helpers/constants.scss';
 
 .dropdownMenu {
   border: 1px solid #ccc;
   border-radius: 4px;
   background-color: #fff;
   width: 120px;
-  box-shadow: $drop-shadow-card;
+  box-shadow: constants.$drop-shadow-card;
   overflow: hidden;
   display: inline-block;
   padding: 0;

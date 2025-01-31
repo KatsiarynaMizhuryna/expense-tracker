@@ -1,4 +1,4 @@
-@import '../../styles/helpers/constants.scss';
+@use '../../styles/helpers/constants.scss';
 
 .input_label {
   font-family: $font-family;
@@ -8,5 +8,5 @@
   text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
-  background-color: $neutral-3;
+  background-color: constants.$neutral-3;
 }

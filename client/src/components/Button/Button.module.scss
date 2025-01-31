@@ -1,12 +1,12 @@
-@import '../../styles/helpers/constants.scss';
+@use '../../styles/helpers/constants.scss';
 
 .button {
   width: 267px;
   height: 44px;
   gap: 0px;
   opacity: 0;
-  color: $neutral-5;
-  background-color: $primary-1;
+  color: constants.$neutral-5;
+  background-color: constants.$primary-1;
   border: none;
   border-radius: 8px;
   font-size: 16px;
@@ -19,14 +19,14 @@
     opacity 0.3s ease;
 
   &.active {
-    background-color: $primary-1;
-    color: $neutral-5;
+    background-color: constants.$primary-1;
+    color: constants.$neutral-5;
     opacity: 1;
   }
 
   &.disabled {
-    background-color: $primary-4;
-    color: $neutral-5;
+    background-color: constants.$primary-4;
+    color: constants.$neutral-5;
     cursor: not-allowed;
     opacity: 0.6;
   }
