@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+$primary-1: #3629b7;
+$primary-2: #5655b9;
+$primary-3: #a8a3d7;
+$primary-4: #f2f1f9;
+
+$neutral-1: #343434;
+$neutral-2: #989898;
+$neutral-3: #979797;
+$neutral-4: #cacaca;
+$neutral-5: #e0e0e0;
+$neutral-6: #ffffff;
+$neutral-7: #cbcbcb;
+$neutral-8: #6b6f7b;
+$neutral-9: #3f3f46;
+
+$semantic-error: #ff4267;
+$semantic-info: #0890fe;
+$semantic-warning: #ffaf2a;
+$semantic-success: #52d5ba;
+
+$font-family-1: 'Poppins', sans-serif;
+$font-family-2: 'Inter', sans-serif;
+
+$title-1: 24px;
+$title-2: 20px;
+$title-3: 16px;
+
+$body-1: 16px;
+$body-1-weight: medium;
+
+$body-2: 16px;
+$body-2-weight: regular;
+
+$body-3: 14px;
+$body-3-weight: medium;
+
+$caption-1: 12px;
+$caption-1-weight: semi-bold;
+
+$caption-2: 14px;
+$caption-2-weight: medium;
+
+$drop-shadow-card: 0px 4px 30px rgba(54, 41, 183, 0.07);
+$drop-shadow-card-small: 0px -5px 30px rgba(54, 41, 183, 0.07);
+$gradient-background: linear-gradient(0deg, #ffffff, #ffffff),
+  linear-gradient(
+    180deg,
+    rgba(223, 225, 231, 0) 0%,
+    rgba(223, 225, 231, 0.05) 100%
+  );

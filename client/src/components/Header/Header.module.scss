@@ -1,0 +1,10 @@
+@use '../../styles/helpers/constants.scss';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: constants.$primary-1;
+  width: 100%;
+  height: 80px;
+}

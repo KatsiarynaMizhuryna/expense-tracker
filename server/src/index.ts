@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-import app from './server';
+import app from './app';
 import { prisma } from './db/db.service';
 
 dotenv.config();

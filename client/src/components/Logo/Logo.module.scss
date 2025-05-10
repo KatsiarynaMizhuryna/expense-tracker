@@ -1,0 +1,8 @@
+@use '../../styles/helpers/constants.scss';
+
+.logo {
+  width: 176px;
+  height: 48.31px;
+  margin: 16px 24px 0px;
+  color: constants.$primary-4;
+}
